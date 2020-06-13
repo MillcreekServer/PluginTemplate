@@ -23,6 +23,11 @@ ext {
     token = null
 }
 
+task checkSettings{
+    if(Objects.equals(rootProject.name, "PluginTemplate")){
+        throw new RuntimeException("Change project name in settings.gradle")
+    }
+}
 
 import groovy.swing.SwingBuilder
 import org.yaml.snakeyaml.DumperOptions
