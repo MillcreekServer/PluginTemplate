@@ -87,7 +87,7 @@ task writePluginYml {
     })
     map.put("permissions", new HashMap<String, Object>() {
         {
-            put(id.toLowerCase() + ".admin", new HashMap<String, Object>() {
+            put(id.toLowerCase(), new HashMap<String, Object>() {
                 {
                     put("description", "Grant admin permission")
                 }
