@@ -12,9 +12,11 @@ plugins {
     id 'groovy'
 }
 
+project.version = '1.0.0'
+
 ext {
     id = project.name
-    version = '1.0.0'
+    version = project.version
     description = 'description'
     author = 'wysohn'
     authors = []
@@ -258,4 +260,12 @@ jar {
     }
 
     duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
 }
