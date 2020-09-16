@@ -27,7 +27,7 @@ ext {
 
 task checkSettings{
     if(Objects.equals(rootProject.name, "PluginTemplate")){
-        throw new RuntimeException("Change project name in settings.gradle")
+        throw new RuntimeException("Change project name in 'settings.gradle'")
     }
 }
 
@@ -135,7 +135,6 @@ task writeBaseCodes{
         packagePath.toFile().mkdirs()
 
     File mainFile = new File("$projectDir/templates/Main.java")
-    File bridgeFile = new File("$projectDir/templates/Bridge.java")
     File langFile = new File("$projectDir/templates/Langs.java")
 
     Map placeholders = [
@@ -143,7 +142,6 @@ task writeBaseCodes{
             "%pluginname%": id.toLowerCase(),
     ]
     replaceAndCopy(mainFile, Paths.get(packagePath.toString(), id + ".java"), placeholders)
-    replaceAndCopy(bridgeFile, Paths.get(packagePath.toString(), id + "Bridge.java"), placeholders)
     replaceAndCopy(langFile, Paths.get(packagePath.toString(), id + "Langs.java"), placeholders)
 }
 
@@ -235,7 +233,7 @@ dependencies {
     compile fileTree(dir: "libs", includes: ['*.jar'])
 
     compile 'org.spigotmc:spigot-api:1.15.+'
-    compile "io.github.wysohn:RapidFramework:2.+"
+    compile "io.github.wysohn:RapidFramework:3.+"
 
     testCompile 'junit:junit:4.+'
     testCompile 'org.mockito:mockito-core:1.9.5'
@@ -270,4 +268,7 @@ compileTestJava {
     options.encoding = 'UTF-8'
 }
 
-sourceCompatibility = 1.8
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
