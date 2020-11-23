@@ -27,3 +27,8 @@ jobs:
       uses: actions/upload-artifact@v2.2.1
       with:
         path: 'build/libs/*.jar'
+    - name: Invoke deployment hook
+      uses: distributhor/workflow-webhook@v1
+      env:
+        webhook_url: ${{ secrets.WEB_HOOK }}
+        webhook_secret: ${{ secrets.WEB_HOOK_SECRET }}
