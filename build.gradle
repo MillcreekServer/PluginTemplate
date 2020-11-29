@@ -77,7 +77,7 @@ task writePluginYml {
             "Citizens"
     ])
     map.put("depend", [])
-    map.put("commands", new HashMap<String, Object>() {
+    map.put("commands", new LinkedHashMap<String, Object>() {
         {
             put(id.toLowerCase(), new HashMap<String, Object>() {
                 {
