@@ -13,7 +13,8 @@ plugins {
     id 'maven-publish'
 }
 
-project.version = '1.0.0'
+version = '1.0.0'
+group = 'io.github.wysohn'
 
 ext {
     id = project.name
