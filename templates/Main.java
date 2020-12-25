@@ -23,7 +23,7 @@ public class $pluginname$ extends AbstractBukkitPlugin {
 
     @Override
     protected void init(PluginMainBuilder pluginMainBuilder) {
-        pluginMainBuilder.addModule(new LanguagesModule(PluginTempLangs.values()));
+        pluginMainBuilder.addModule(new LanguagesModule($pluginname$Langs.values()));
         pluginMainBuilder.addModule(new ManagerModule(
                 //TODO your managers
         ));
