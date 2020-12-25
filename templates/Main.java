@@ -7,7 +7,7 @@ import io.github.wysohn.rapidframework3.core.inject.module.ManagerModule;
 import io.github.wysohn.rapidframework3.core.inject.module.MediatorModule;
 import io.github.wysohn.rapidframework3.core.main.PluginMainBuilder;
 import io.github.wysohn.rapidframework3.core.player.AbstractPlayerWrapper;
-import org.bukkit.plugin.java.JavaPluginLoader;
+import org.bukkit.Server;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,8 +17,8 @@ public class $pluginname$ extends AbstractBukkitPlugin {
     public $pluginname$() {
     }
 
-    private $pluginname$(JavaPluginLoader mockLoader) {
-        super(mockLoader);
+    private $pluginname$(Server server) {
+        super(server);
     }
 
     @Override
