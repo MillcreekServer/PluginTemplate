@@ -34,7 +34,7 @@ public class $pluginname$ extends AbstractBukkitPlugin {
     }
 
     @Override
-    protected void registerCommands(List<SubCommand> list) {
+    protected void registerCommands(List<SubCommand.Builder> list) {
         //TODO register commands
     }
 
